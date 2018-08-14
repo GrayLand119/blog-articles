@@ -1,11 +1,14 @@
 ---
+
 title: Python requests 上传文件, 并获取上传进度
-subtitle: PYUPPROG
+subtitle: prufagp
 date: 2018-04-19 10:40:00
 tags: Python
+
 ---
 
-# Python requests 上传大文件, 并获取上传进度
+
+<!--# Python requests 上传大文件, 并获取上传进度-->
 
 最新在使用PyQt5开发时有个上传大文件的需求, 在查阅`Requests` 官网进阶手册 [Advanced Usage — Requests 2.18.4 documentation](http://docs.python-requests.org/en/master/user/advanced/#streaming-uploads) 中只有上传文件的几种方法介绍, 并没有提到上传进度获取.
 

@@ -1,13 +1,15 @@
 
 ---
+
 title: TensorFlow 学习笔记(1)
+subtitle: tfln1
 date: 2018-08-14 16:07:22
 tags: TensorFlow
 
 ---
 
+<!--# TensorFlow 学习笔记(1)-->
 
-# TensorFlow 学习笔记(1)
 ## 张量 - Tensor
 
 0阶张量 - Scalar(标量) - 一个数字
