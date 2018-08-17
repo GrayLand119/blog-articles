@@ -1,10 +1,11 @@
 
 ---
 
-title: TensorFlow 学习笔记(1)
+title: TensorFlow 学习笔记(1)-基础相关
 subtitle: tfln1
 date: 2018-08-14 16:07:22
 tags: TensorFlow
+mathjax: true
 
 ---
 
@@ -124,6 +125,7 @@ weights = tf.Variable(tf.random_normal([2,3], stddev=2))
 * `random_gamma`, Gamma 分布
 
 常数生成函数:
+
 `tf.<function>`:
 * `zeros`, all 0
 * `ones`, all 1
@@ -142,8 +144,8 @@ w3 = tf.Variable(weights.initialized_value() * 2.0)
 ```
 
 每个参数设置后并不能马上使用, 需要先进行初始化操作.
-> sess.run(w1.initializer)
-> 
+sess.run(w1.initializer)
+
 
 参数多的时候,为了方便初始化,使用:
 `tf.initialize_all_veriables()`:
@@ -291,9 +293,10 @@ mse = tf.reduce_mean(tf.square(y_ - y))
 
 `梯度下降法`不断沿着梯度的反方向让参数朝着总损失更小的方向更新.(因此学习率设置过大,会造成结果不断的跳跃)
 
-> 梯度 = 求偏导方式计算
-> 参数更新 = 上次参数 - 梯度 x 学习率
-> 
+梯度 = 求偏导方式计算
+
+参数更新 = 上次参数 - 梯度 x 学习率
+ 
 
 梯度下降法不能保证被优化的函数达到全局最优解.
 只有当损失函数为凸函数时才能保证达到全局最优解.
@@ -309,9 +312,9 @@ mse = tf.reduce_mean(tf.square(y_ - y))
 `指数衰减法`: `tf.train.exponential_decay`实现了指数衰减学习率. 具体就是,先使用比较大的学习率来快速得到比较优的解, 然后随着迭代继续逐步减小学习率.
 
 衰减公式:
+decayed_learning_rate = 
+learning_rate * decay_rate ^ (global_step / decay_steps)
 
-> decayed_learning_rate = 
-> learning_rate * decay_rate ^ (global_step / decay_steps)
 
 参数 `staircase` , = True 时, `global_step / decay_steps`取整.
 
@@ -333,9 +336,9 @@ L1 正则化会让更多的参数变为0, 这样可以达到类似特征选取�
 
 $$ L_1  = R(w) = \sum\limits_i \Big|w_i\Big| $$
 
-> tf.contrib.layers.l1_regularizer(lambda)(w)
-> lambda -> λ
-> 
+
+tf.contrib.layers.l1_regularizer(lambda)(w)
+lambda -> λ
 
 L1 不可导.
 
@@ -367,12 +370,16 @@ L2 =  7.5
 
 在采用随机梯度下降算法训练神经网络时, 使用滑动平均模型在很多应用中都可以在一定程度提高最终模型在测试数据上的表现.
 
-> tf.train.ExponentialMovingAverage 来实现
-> 参数- decay 衰减率, 一般设为接近1的数 (0.9999)
-> 参数- num_updates, $decay=min(decay, \frac {1+num_updates}{10 + num_updates})$
-> shadow_variable 影子变量
-> variable 待更新变量
-> shadow_variable 初始值是相应变量的初始值
+tf.train.ExponentialMovingAverage 来实现
+参数- decay 衰减率, 一般设为接近1的数 (0.9999)
+
+参数- num_updates, $decay=min(decay, \frac {1+num_updates}{10 + num_updates})$
+
+shadow_variable 影子变量
+
+variable 待更新变量
+
+shadow_variable 初始值是相应变量的初始值
 
 
 $$shadow\_variable=decay * shadow\_variable + (1-decay) * variable$$

@@ -1,6 +1,6 @@
 ---
 
-title: TensorFlow 学习笔记(2)
+title: TensorFlow 学习笔记(2)-手写体识别
 subtitle: tfln2
 date: 2018-08-15 17:41:38
 tags: TensorFlow
@@ -12,9 +12,9 @@ mathjax: true
 
 # 实践-手写体识别
 
-[Python代码](./MINSTPractice1.py)
-
 本次内容主要是基于 `TensorFlow 学习笔记(1)` 中的知识, 进行一次实战操作.
+
+[相关代码](./MINSTPractice1.py.py)
 
 ## MNIST 数字识别问题
 
