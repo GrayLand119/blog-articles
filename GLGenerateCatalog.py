@@ -51,7 +51,9 @@ if __name__ == '__main__':
         genContent += "\n## %s\n\n"%(dirSplited[-1])
         for item in filteredItem:
             itemName = item.split('/')[-1]
-            genContent += "[%s](./%s/%s)</br>"%(itemName.split('.md')[-2], dirSplited[-1], itemName)
+            linkAddress = "./%s/%s)\n</br>"%(dirSplited[-1], itemName)
+            linkAddress = linkAddress.replace(' ', '%20')
+            genContent += "[%s](%s)"%(itemName.split('.md')[-2], linkAddress)
 
     genContent += "\n\n"
     print(genContent)
