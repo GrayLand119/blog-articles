@@ -106,15 +106,15 @@ PC上的是 `1.10.1`. 一些后来添加的新方法, 如 `dilations` op 在手�
 
 然后, 生成转换好的模型(figure-1)
 
-![figure-1](2018-在 iOS 设备上运行 TensorFlow 中训练好的模型/2e3e1d6e.jpg)
+![figure-1](2018-在iOS设备上运行TensorFlow中训练好的模型/2e3e1d6e.jpg)
 
 把转换好的 `inception_v3.mlmodel` 导入 `iOS项目`:
 
-![figure-2](2018-在 iOS 设备上运行 TensorFlow 中训练好的模型/35f3c3c5.jpg)
+![figure-2](2018-在iOS设备上运行TensorFlow中训练好的模型/35f3c3c5.jpg)
 
 点击 `inception_v3.mlmodel` 可以查看到 model 的详情:
 
-![figure-3](2018-在 iOS 设备上运行 TensorFlow 中训练好的模型/41a5e1e3.jpg)
+![figure-3](2018-在iOS设备上运行TensorFlow中训练好的模型/41a5e1e3.jpg)
 
 可以看到一些信息:
 
@@ -205,7 +205,7 @@ print("index=", index)
 
 运行效果:
 
-![0ace23cb](2018-在 iOS 设备上运行 TensorFlow 中训练好的模型/0ace23cb.jpg)
+![0ace23cb](2018-在iOS设备上运行TensorFlow中训练好的模型/0ace23cb.jpg)
 
 
 另外, 这里也可以使用` Vision`来进行处理, 这样可以免去转换`CVPixelBuffer`.
